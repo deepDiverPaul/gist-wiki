@@ -1,1 +1,25 @@
-Welcome to Wiki!
+
+    $ cd /path/to/www/
+    $ git clone https://gitnet.fr/deblan/gist
+    $ cd gist
+    $ make
+
+An interactive shell will start. If you want to run the interactive shell manually, run:
+
+    $ composer gist-scripts
+
+To perform a manual configuration, follow these instructions.
+
+With `MySQL`:
+
+    $ cp app/config/propel.yaml.dist-mysql propel.yaml
+
+With `SQLite`:
+
+    $ cp app/config/propel.yaml.dist-sqlite propel.yaml
+
+Then edit `propel.yaml` and replace the values of `dsn`, `user`, `password` by considering your environment and run `$ make propel`.
+
+**Versions >= 1.4.4 only**: `$ cp app/config/config.yml.dist app/config/config.yml`
+
+See the [configuration section](#configuration) for more information about configuration.
